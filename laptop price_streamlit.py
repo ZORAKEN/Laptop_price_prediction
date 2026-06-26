@@ -10,6 +10,7 @@
 import streamlit as st
 import pickle
 import numpy as np
+import pandas as pd
 
 # -------------------------------
 # Page configuration
@@ -141,20 +142,20 @@ if predict_btn:
     ppi = ((X_res ** 2 + Y_res ** 2) ** 0.5) / screen_size
 
     # Final query must match training feature order exactly
-    query = np.array([
-        company,
-        laptop_type,
-        ram,
-        weight,
-        touchscreen_val,
-        ips_val,
-        ppi,
-        cpu,
-        hdd,
-        ssd,
-        gpu,
-        os
-    ], dtype=object).reshape(1, 12)
+    query = pd.DataFrame({
+    'Company': [company],
+    'TypeName': [laptop_type],
+    'RAM': [ram],
+    'Weight': [weight],
+    'Touchscreen': [touchscreen_val],
+    'Ips': [ips_val],
+    'ppi': [ppi],
+    'Cpu brand': [cpu],
+    'HDD': [hdd],
+    'SSD': [ssd],
+    'Gpu brand': [gpu],
+    'os': [os]
+})
 
     # Prediction
     predicted_price = int(pipe.predict(query)[0])
