@@ -1,3 +1,4 @@
+<img width="1893" height="970" alt="Screenshot 2026-06-26 152259" src="https://github.com/user-attachments/assets/2afbfbfd-bcc8-4954-a491-323bae7392c4" />
 # Laptop_price_prediction# 💻 Laptop Price Predictor
 
 A Machine Learning web application that predicts the price of a laptop based on its hardware specifications. The project uses a trained regression model and a Streamlit interface for real-time price prediction.
