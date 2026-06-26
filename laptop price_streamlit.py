@@ -157,7 +157,7 @@ if predict_btn:
     ], dtype=object).reshape(1, 12)
 
     # Prediction
-    predicted_price = int(np.exp(pipe.predict(query)[0]))
+    predicted_price = int(pipe.predict(query)[0])
 
     # Output card
     st.markdown(
